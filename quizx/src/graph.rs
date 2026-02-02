@@ -389,6 +389,11 @@ pub trait GraphLike: Clone + Sized + Send + Sync + std::fmt::Debug {
         self.add_edge_with_type(s, t, EType::N);
     }
 
+    /// Add a Hadamard edge to the graph
+    fn add_hadamard_edge(&mut self, s: V, t: V) {
+        self.add_edge_with_type(s, t, EType::H);
+    }
+
     /// Returns the type of a given edge and panics if the edge doesn't exist
     fn edge_type(&self, s: V, t: V) -> EType {
         self.edge_type_opt(s, t).expect("Edge not found")
