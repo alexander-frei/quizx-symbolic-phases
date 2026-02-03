@@ -1,7 +1,6 @@
 use quizx::simplify::full_simp;
-use quizx::graph::*;
-use quizx::vec_graph::Graph;
 use quizx::circuit::Circuit;
+use quizx::vec_graph::*;
 
 
 
