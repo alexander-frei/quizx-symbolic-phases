@@ -1,3 +1,6 @@
+//------------------------------
+//   Importing modules
+//------------------------------
 use quizx::simplify::full_simp;
 use quizx::circuit::Circuit;
 use quizx::vec_graph::*;
