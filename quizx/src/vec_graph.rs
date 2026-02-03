@@ -17,7 +17,6 @@
 pub use crate::graph::*;
 use crate::params::Expr;
 use crate::scalar::*;
-use num::rational::Rational64;
 use rustc_hash::FxHashMap;
 use std::mem;
 
