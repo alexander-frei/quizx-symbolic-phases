@@ -36,23 +36,21 @@ fn main() {
     println!("{}", graph.to_dot());
     
 
-    let mut g = Graph::new();
-    let v0 = g.add_vertex(VType::Z); // phase defaults to 0
-    let v1 = g.add_vertex(VType::Z);
-    let v2 = g.add_vertex(VType::Z);
-    let v3 = g.add_vertex(VType::Z);
+    let mut graph = Graph::new();
+    let v0 = graph.add_z_vertex(); // phase defaults to 0
+    let v1 = graph.add_z_vertex();
+    let v2 = graph.add_z_vertex();
+    let v3 = graph.add_z_vertex();
+    graph.add_hadamard_edge(v0, v1);
+    graph.add_hadamard_edge(v0, v2);
+    graph.add_hadamard_edge(v0, v3);
+    graph.add_hadamard_edge(v1, v3);
 
-    g.add_hadamard_edge(v0, v1);
-    g.add_hadamard_edge(v0, v2);
-    g.add_hadamard_edge(v0, v3);
-    g.add_hadamard_edge(v1, v3);
 
-
-    println!("Before pivoting:\n {}", g.to_dot());
-    if check_pivot(&g, v0, v1) {
-        pivot_unchecked(&mut g, v0, v1);
+    println!("Before pivoting:\n {}", graph.to_dot());
+    if check_pivot(&graph, v0, v1) {
+        pivot_unchecked(&mut graph, v0, v1);
     }
-    println!("After pivoting:\n {}", g.to_dot());
-
+    println!("After pivoting:\n {}", graph.to_dot());
 
 }

@@ -127,6 +127,13 @@ impl GraphLike for Graph {
         })
     }
 
+    fn add_z_vertex(&mut self) -> V {
+        self.add_vertex_with_data(VData {
+            ty: VType::Z,
+            ..Default::default()
+        })
+    }
+
     fn add_vertex_with_data(&mut self, d: VData) -> V {
         let v = self.freshv;
         self.freshv += 1;

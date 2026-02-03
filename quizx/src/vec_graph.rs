@@ -172,7 +172,13 @@ impl GraphLike for Graph {
     fn add_vertex(&mut self, ty: VType) -> V {
         self.add_vertex_with_data(VData {
             ty,
-            phase: Rational64::new(0, 1).into(),
+            ..Default::default()
+        })
+    }
+
+    fn add_z_vertex(&mut self) -> V {
+        self.add_vertex_with_data(VData {
+            ty: VType::Z,
             ..Default::default()
         })
     }

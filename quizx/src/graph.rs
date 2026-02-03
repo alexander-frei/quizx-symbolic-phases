@@ -204,6 +204,9 @@ pub trait GraphLike: Clone + Sized + Send + Sync + std::fmt::Debug {
     /// Add a vertex with the given type
     fn add_vertex(&mut self, ty: VType) -> V;
 
+    /// Add a z spider as a vertex
+    fn add_z_vertex(&mut self) -> V;
+
     /// Add a vertex with the given VData struct
     fn add_vertex_with_data(&mut self, d: VData) -> V;
 
