@@ -679,7 +679,7 @@ pub trait GraphLike: Clone + Sized + Send + Sync + std::fmt::Debug {
     }
     /// Return a graphviz-friendly string representation of the graph
     fn to_dot(&self) -> String {
-        let mut dot = String::from("graph {\n");
+        let mut dot = String::from("graph {\n  rankdir=LR;\n");
         for v in self.vertices() {
             let t = self.vertex_type(v);
             let p = self.phase(v);
